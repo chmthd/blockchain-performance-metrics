@@ -1,0 +1,14 @@
+t3w7o342fj7ekvaepqsh2epmadwuqk7m76luzm3gj44bo5rzxx3fg7muuyukpgc4znoiopc7sn4d25cyf36w5a
+t1imnmmnph756glnsph6nfhf5ozuqesfqkoa4gkoy
+
+rootkey1 = f3ukvgria4pscjx5szro5znk5heefqzzf62o24iaekzjdwzzp3yyrsvict45rx2qoxgptbsgb3j7hx7jrkannq
+
+rootkey2 = f3tdqauc7rh6humxwsh4a3wmaw6d7dudisj3fp3djzzwm4ppljfxdk6v5g2uusbdq5qz2l2n5z7ndet7qiiaga
+
+
+cd ~/lotus-devnet
+export LOTUS_PATH=~/.lotus-local-net
+export LOTUS_MINER_PATH=~/.lotus-miner-local-net
+export LOTUS_SKIP_GENESIS_CHECK=_yes_
+export CGO_CFLAGS_ALLOW="-D__BLST_PORTABLE__"
+export CGO_CFLAGS="-D__BLST_PORTABLE__"

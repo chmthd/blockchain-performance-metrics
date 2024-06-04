@@ -1,0 +1,39 @@
+#BUILD, RUN, STOP, 
+docker-compose build
+docker-compose up -d
+docker-compose down
+docker stop <container_id_or_name>
+
+
+#START NODES
+
+
+#INFO
+docker ps -a
+docker images
+
+
+#REMOVE
+docker image prune
+docker rmi IMAGE_ID_OR_NAME
+docker rm <container_id_or_name>
+
+
+#FRESH CLEAN UP
+docker container prune
+docker image prune
+docker volume prune
+docker network prune
+
+
+##BITCOIN REGTEST CMDS
+
+docker exec -it docker-bitcoin-node1-1 /bin/bash
+bitcoin-cli -regtest getwalletinfo
+bitcoin-cli -regtest createwallet "testwallet"
+bitcoin-cli -regtest getwalletinfo
+bitcoin-cli -regtest loadwallet "testwallet"
+bitcoin-cli -regtest generatetoaddress 101 $(bitcoin-cli -regtest getnewaddress)
+bitcoin-cli -regtest getbalance
+
+

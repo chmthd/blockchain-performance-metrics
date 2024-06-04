@@ -1,0 +1,41 @@
+version: '3.7'
+
+services:
+  clientnode:
+    build:
+      context: ./clientnode
+      dockerfile: Dockerfile
+    container_name: clientnode
+    ports:
+      - "1234:1234"
+      - "5678:5678"
+    volumes:
+      - clientnode_data:/var/lib/lotus
+
+  storageprovider1:
+    build:
+      context: ./storageprovider
+      dockerfile: Dockerfile
+    container_name: storageprovider1
+    ports:
+      - "2234:1234"
+      - "6678:5678"
+    volumes:
+      - storageprovider1_data:/var/lib/lotus
+
+  storageprovider2:
+    build:
+      context: ./storageprovider
+      dockerfile: Dockerfile
+    container_name: storageprovider2
+    ports:
+      - "3234:1234"
+      - "7678:5678"
+    volumes:
+      - storageprovider2_data:/var/lib/lotus
+
+volumes:
+  clientnode_data:
+  storageprovider1_data:
+  storageprovider2_data:
+

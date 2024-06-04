@@ -1,0 +1,99 @@
+version: '3.8'
+
+services:
+  bitcoin-node1:
+    build: .
+    ports:
+      - "18443:18443"
+      - "18444:18444"
+    volumes:
+      - ./bitcoin.conf:/root/.bitcoin/bitcoin.conf
+
+  bitcoin-node2:
+    build: .
+    ports:
+      - "18445:18445"
+      - "18446:18446"
+    volumes:
+      - ./bitcoin-node2.conf:/root/.bitcoin/bitcoin.conf
+
+  bitcoin-node3:
+    build: .
+    ports:
+      - "18447:18447"
+      - "18448:18448"
+    volumes:
+      - ./bitcoin-node3.conf:/root/.bitcoin/bitcoin.conf
+      
+  bitcoin-node4:
+    build: .
+    ports:
+      - "18449:18449"
+      - "18450:18450"
+    volumes:
+      - ./bitcoin-node4.conf:/root/.bitcoin/bitcoin.conf
+      
+  bitcoin-node5:
+    build: .
+    ports:
+      - "18451:18451"
+      - "18452:18452"
+    volumes:
+      - ./bitcoin-node5.conf:/root/.bitcoin/bitcoin.conf
+      
+  bitcoin-node6:
+    build: .
+    ports:
+      - "18453:18453"
+      - "18454:18454"
+    volumes:
+      - ./bitcoin-node6.conf:/root/.bitcoin/bitcoin.conf
+      
+  bitcoin-node7:
+    build: .
+    ports:
+      - "18455:18455"
+      - "18456:18456"
+    volumes:
+      - ./bitcoin-node7.conf:/root/.bitcoin/bitcoin.conf
+      
+  bitcoin-node8:
+    build: .
+    ports:
+      - "18457:18457"
+      - "18458:18458"
+    volumes:
+      - ./bitcoin-node8.conf:/root/.bitcoin/bitcoin.conf
+      
+  bitcoin-node9:
+    build: .
+    ports:
+      - "18459:18459"
+      - "18460:18460"
+    volumes:
+      - ./bitcoin-node9.conf:/root/.bitcoin/bitcoin.conf
+      
+networks:
+  bitcoin-net:
+    driver: bridge
+      
+volumes:
+  bitcoin-data1:
+    driver: local
+  bitcoin-data2:
+    driver: local
+  bitcoin-data3:
+    driver: local
+  bitcoin-data4:
+    driver: local
+  bitcoin-data5:
+    driver: local
+  bitcoin-data6:
+    driver: local
+  bitcoin-data7:
+    driver: local
+  bitcoin-data8:
+    driver: local
+  bitcoin-data9:
+    driver: local
+

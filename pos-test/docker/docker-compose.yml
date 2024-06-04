@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+  node1:
+    image: ethereum/client-go
+    container_name: ethereum_node1
+    ports:
+      - "30303:30303"
+      - "8545:8545"
+    volumes:
+      - ./node1:/root/.ethereum
+    command: --networkid 12345 --nodiscover --http --http.addr 0.0.0.0 --http.port 8545 --http.api personal,eth,net,web3 --ws --ws.addr 0.0.0.0 --ws.port 8546 --ws.api personal,eth,net,web3 --ws.origins '*'
+  
+  node2:
+    image: ethereum/client-go
+    container_name: ethereum_node2
+    ports:
+      - "30304:30303"
+      - "8546:8545"
+    volumes:
+      - ./node2:/root/.ethereum
+    command: --networkid 12345 --nodiscover --http --http.addr 0.0.0.0 --http.port 8545 --http.api personal,eth,net,web3 --ws --ws.addr 0.0.0.0 --ws.port 8546 --ws.api personal,eth,net,web3 --ws.origins '*'
+
+  node3:
+    image: ethereum/client-go
+    container_name: ethereum_node3
+    ports:
+      - "30305:30303"
+      - "8547:8545"
+    volumes:
+      - ./node3:/root/.ethereum
+    command: --networkid 12345 --nodiscover --http --http.addr 0.0.0.0 --http.port 8545 --http.api personal,eth,net,web3 --ws --ws.addr 0.0.0.0 --ws.port 8546 --ws.api personal,eth,net,web3 --ws.origins '*'
+
